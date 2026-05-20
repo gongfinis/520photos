@@ -1,0 +1,14 @@
+[build]
+  publish = "public"
+  command = "node build.js"
+
+[[redirects]]
+  from = "/api/photos"
+  to = "/photos.json"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
