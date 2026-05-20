@@ -1,330 +1,338 @@
-# ❤️ Heart Collage - Local Photo Album
+# ❤️ 本地拍立得爱心相册 (Heart Collage)
 
-A web application that automatically arranges your local photos into a heart shape, with real-time collaboration and one-click export.
+一个将本地照片自动排列成爱心形状的网页应用，支持实时协作和一键导出。
 
-![Heart Collage Preview](https://via.placeholder.com/800x400?text=Heart+Collage+Preview)
+![爱心相册预览](https://via.placeholder.com/800x400?text=Heart+Collage+Preview)
 
-## ✨ Features
+**[English](README.en.md)** | 简体中文
 
-- 📸 **Auto Photo Loading**: Automatically loads all images from the `photos/` folder
-- ❤️ **Heart Layout**: Smart algorithm arranges photos into a romantic heart pattern
-- 🎨 **Low Overlap Design**: Optimized layout algorithm reduces photo overlap for clearer display
-- 🔀 **Random Shuffle**: One-click rearrangement with different surprise effects every time
-- 🖱️ **Free Adjustment**:
-  - Mouse wheel to zoom in/out
-  - Middle-click drag to pan
-  - Drag individual photos to fine-tune position and rotation
-- 💾 **Export PNG**: One-click export of high-definition heart collage (2x resolution)
-- 🌐 **Dual Deployment Mode**:
-  - Local Node.js server (with WebSocket real-time collaboration)
-  - Netlify/Vercel static deployment (no server required)
+[![Star History Chart](https://api.star-history.com/svg?repos=gongfinis/520photos&type=Date)](https://star-history.com/#gongfinis/520photos&Date)
 
-## 📸 Supported Photo Formats
+## ✨ 功能特点
 
-| Format | Extension | Status |
-|--------|-----------|--------|
-| JPEG | `.jpg`, `.jpeg` | ✅ Supported |
-| PNG | `.png` | ✅ Supported |
-| WebP | `.webp` | ✅ Supported |
-| GIF | `.gif` | ✅ Supported |
-| HEIC | `.heic` | ❌ Not supported (please convert to JPG) |
+- 📸 **自动读取照片**：自动加载 `photos/` 文件夹中的所有图片
+- ❤️ **心形布局**：智能算法将照片排列成浪漫的心形图案
+- 🎨 **低遮挡设计**：优化布局算法，减少照片重叠，展示更清晰
+- 🔀 **随机重排**：一键重新排列，每次都有不同的惊喜效果
+- 🖱️ **自由调整**：
+  - 滚轮缩放视图
+  - 中键拖拽平移
+  - 单张照片可拖动微调位置和旋转角度
+- 💾 **导出 PNG**：一键导出高清爱心拼贴图（2x 分辨率）
+- 🌐 **双模式部署**：
+  - 本地 Node.js 服务器（支持 WebSocket 实时协作）
+  - Netlify/Vercel 静态部署（无需服务器）
 
-## 🚀 Quick Start
+## 📸 支持的照片格式
 
-### Option 1: Local Development (Full Features)
+| 格式 | 扩展名 | 状态 |
+|------|--------|------|
+| JPEG | `.jpg`, `.jpeg` | ✅ 支持 |
+| PNG | `.png` | ✅ 支持 |
+| WebP | `.webp` | ✅ 支持 |
+| GIF | `.gif` | ✅ 支持 |
+| HEIC | `.heic` | ❌ 不支持（请转换为 JPG） |
 
-#### Prerequisites
+## 🚀 快速开始
+
+### 方式一：本地开发（完整功能）
+
+#### 前置要求
 
 - **Node.js** >= 14.x
 - **npm** >= 6.x
 
-#### Installation & Run
+#### 安装与运行
 
 ```bash
-# 1. Clone the project
-git clone https://github.com/your-username/heart-local-share.git
-cd heart-local-share
+# 1. 克隆项目
+git clone https://github.com/gongfinis/520photos.git
+cd 520photos
 
-# 2. Install dependencies
+# 2. 安装依赖
 npm install
 
-# 3. Place your photos in the photos/ folder
-#    Supported formats: .jpg, .png, .webp, .gif
+# 3. 将你的照片放入 photos/ 文件夹
+#    支持格式：.jpg, .png, .webp, .gif
 
-# 4. Start the server
+# 4. 启动服务器
 npm start
 
-# 5. Open your browser and visit
+# 5. 打开浏览器访问
 # http://localhost:3000
 ```
 
-#### Available Commands
+#### 可用命令
 
 ```bash
-# Start development server (with WebSocket collaboration)
+# 启动开发服务器（含 WebSocket 协作）
 npm start
-# or
+# 或
 npm run start:local
 
-# Build static files (for deployment)
+# 构建静态文件（用于部署）
 npm run build
 
-# Preview build result locally (simulates Netlify effect)
+# 本地预览构建结果（模拟 Netlify 效果）
 npm run preview
 ```
 
 ---
 
-### Option 2: Netlify One-Click Deployment (Recommended)
+### 方式二：Netlify 一键部署（推荐）
 
-#### Method A: GitHub Auto Deployment ⭐
+#### 方法 A：通过 GitHub 自动部署 ⭐
 
-**Step 1: Fork or Push Code**
+**第 1 步：Fork 或推送代码**
 
 ```bash
-# Fork this repository to your GitHub account
-# Then clone your fork
-git clone https://github.com/YOUR-USERNAME/heart-local-share.git
-cd heart-local-share
+# Fork 此仓库到你的 GitHub 账号
+# 然后克隆你的 fork
+git clone https://github.com/gongfinis/520photos.git
+cd 520photos
 
-# Add your photos to the photos/ folder
-# Commit and push
+# 添加你的照片到 photos/ 文件夹
+# 提交并推送
 git add .
-git commit -m "Add my photos"
+git commit -m "添加我的照片"
 git push origin main
 ```
 
-**Step 2: Configure Netlify**
+**第 2 步：配置 Netlify**
 
-1. Visit [netlify.com](https://www.netlify.com/) and sign up/log in
-2. Click **"Add new site" → "Import an existing project"**
-3. Select **GitHub** as the provider
-4. Choose the repository you just forked
-5. Configure build settings:
+1. 访问 [netlify.com](https://www.netlify.com/) 并登录/注册
+2. 点击 **"Add new site" → "Import an existing project"**
+3. 选择 **GitHub** 作为提供商
+4. 选择你刚才 fork 的仓库 `gongfinis/520photos`
+5. 配置构建设置：
 
-   | Setting | Value |
-   |---------|-------|
+   | 设置项 | 值 |
+   |--------|-----|
    | **Build command** | `npm run build` |
    | **Publish directory** | `public` |
-   | **Node version** | `18` or higher |
+   | **Node version** | `18` 或更高 |
 
-6. Click **"Deploy site"** 🚀
+6. 点击 **"Deploy site"** 🚀
 
-**Wait 1-2 minutes, and your website will be live!**
+**等待 1-2 分钟，你的网站就上线了！**
 
-#### Method B: Manual Drag & Drop Deployment
+#### 方法 B：手动拖拽部署
 
 ```bash
-# 1. Clone the project
-git clone https://github.com/your-username/heart-local-share.git
-cd heart-local-share
+# 1. 克隆项目
+git clone https://github.com/gongfinis/520photos.git
+cd 520photos
 
-# 2. Install dependencies and build
+# 2. 安装依赖并构建
 npm install
 npm run build
 
-# 3. Drag the entire public folder to:
+# 3. 将 public 文件夹整个拖拽到：
 #    https://app.netlify.com/drop
 ```
 
 ---
 
-### Option 3: Vercel Deployment
+### 方式三：Vercel 部署
 
 ```bash
-# 1. Install Vercel CLI (optional)
+# 1. 安装 Vercel CLI（可选）
 npm i -g vercel
 
-# 2. Run in project directory
+# 2. 在项目目录运行
 vercel
 
-# 3. Follow prompts to configure:
+# 3. 按提示配置：
 #    - Build Command: npm run build
 #    - Output Directory: public
 #    - Framework Preset: Other
 ```
 
-Or directly import your GitHub repository on [vercel.com](https://vercel.com).
+或直接在 [vercel.com](https://vercel.com) 导入 GitHub 仓库 `gongfinis/520photos`。
 
 ---
 
-## 📁 Project Structure
+## 📁 项目结构
 
 ```
-heart-local-share/
-├── photos/                  # 👈 Place your photos here (processed by build script)
+520photos/
+├── photos/                  # 👈 放置你的照片（会被构建脚本处理）
 │   ├── IMG_0001.jpg
 │   ├── IMG_0002.png
 │   └── ...
-├── public/                  # 🔨 Build output (auto-generated, do not modify manually)
+├── public/                  # 🔨 构建输出（自动生成，不要手动修改）
 │   ├── index.html
-│   ├── photos.json          # Photo list data
-│   └── photos/              # Copied photo files
-├── index.html               # Main page (frontend code)
-├── server.js                # Node.js backend server (for local development)
-├── build.js                 # Node.js build script
-├── build.py                 # Python build script (alternative)
-├── netlify.toml             # Netlify deployment configuration
-├── package.json             # Node.js project configuration
-├── package-lock.json        # Dependency lock file
-└── README.md                # This documentation
+│   ├── photos.json          # 照片列表数据
+│   └── photos/              # 复制的照片文件
+├── index.html               # 主页面（前端代码）
+├── server.js                # Node.js 后端服务器（本地开发用）
+├── build.js                 # Node.js 构建脚本
+├── build.py                 # Python 构建脚本（备用）
+├── netlify.toml             # Netlify 部署配置
+├── package.json             # Node.js 项目配置
+├── package-lock.json        # 依赖锁定文件
+├── README.md                # 中文文档（本文件）
+├── README.en.md             # 英文文档
+└── GITHUB_UPLOAD_GUIDE.md   # GitHub 上传指南
 ```
 
-## 🎮 User Guide
+## 🎮 使用指南
 
-### Basic Operations
+### 基础操作
 
-1. **Add Photos**: Place `.jpg/.png/.webp/.gif` format photos in the `photos/` folder
-2. **Refresh Photos**: Click the **"Refresh Photos"** button in the toolbar (or press F5)
-3. **View Heart**: Photos will automatically arrange into a heart shape
+1. **添加照片**：将 `.jpg/.png/.webp/.gif` 格式的照片放入 `photos/` 文件夹
+2. **刷新照片**：点击工具栏 **"刷新照片"** 按钮（或按 F5）
+3. **查看爱心**：照片会自动排列成心形图案
 
-### Advanced Operations
+### 高级操作
 
-| Operation | Method | Description |
-|-----------|--------|-------------|
-| Zoom View | Mouse wheel | Zoom in/out of overall view |
-| Pan View | Middle-click drag | Move view position |
-| Adjust Single Photo | Left-click drag photo | Fine-tune position and angle |
-| Random Shuffle | Click **"Shuffle"** | Regenerate layout |
-| Reset View | Click **"Reset View"** | Return to initial state |
-| Export Image | Click **"Export PNG"** | Save as high-definition image |
+| 操作 | 方式 | 说明 |
+|------|------|------|
+| 缩放视图 | 鼠标滚轮 | 放大/缩小整体视图 |
+| 平移视图 | 鼠标中键拖拽 | 移动视图位置 |
+| 调整单张照片 | 左键拖拽照片 | 微调位置和角度 |
+| 随机重排 | 点击 **"随机重排"** | 重新生成布局 |
+| 重置视图 | 点击 **"重置视图"** | 回到初始状态 |
+| 导出图片 | 点击 **"导出 PNG"** | 保存为高清图片 |
 
-### Updating Photos (For Netlify Users)
+### 更新照片（Netlify 用户）
 
-If you're using Netlify deployment, updating photos requires rebuilding:
+如果你使用 Netlify 部署，更新照片需要重新构建：
 
 ```bash
-# 1. Add/modify photos in the local photos/ folder
+# 1. 在本地添加/修改 photos/ 中的照片
 
-# 2. Re-commit
+# 2. 重新提交
 git add photos/
-git commit -m "Update photos"
+git commit -m "更新照片"
 git push origin main
 
-# 3. Netlify will automatically redeploy (about 1-2 minutes)
+# 3. Netlify 会自动重新部署（约 1-2 分钟）
 ```
 
-Or test new photos locally:
+或在本地测试新照片：
 
 ```bash
 npm run preview
-# Visit http://localhost:3000 to view
+# 访问 http://localhost:3000 查看
 ```
 
-## ⚙️ Customization
+## ⚙️ 自定义配置
 
-### Modify Heart Size and Spacing
+### 修改心形大小和间距
 
-Edit the `createHeartPoints` function in [index.html](index.html):
+编辑 [index.html](index.html) 中的 `createHeartPoints` 函数：
 
 ```javascript
 function createHeartPoints(n) {
-  // Overall heart size (smaller value = larger heart)
-  const scale = Math.min(w, h) / 26;  // Try /20 or /30
+  // 心形整体大小（值越小，心形越大）
+  const scale = Math.min(w, h) / 26;  // 尝试改为 /20 或 /30
   
-  // Random offset range for photos (smaller value = neater)
-  x: cx + heartX(t) * scale + rand(-8, 8),  // X-axis offset
-  y: cy - heartY(t) * scale + rand(-7, 7),  // Y-axis offset
+  // 照片随机偏移范围（值越小越整齐）
+  x: cx + heartX(t) * scale + rand(-8, 8),  // X轴偏移
+  y: cy - heartY(t) * scale + rand(-7, 7),  // Y轴偏移
   
-  // Minimum gap (larger value = more spread out photos)
-  const minGap = Math.max(35, CARD_W * 0.58);  // Try 40 or 50
+  // 最小间距（值越大，照片越分散）
+  const minGap = Math.max(35, CARD_W * 0.58);  // 尝试改为 40 或 50
   
-  // Collision detection rounds (larger value = more thorough separation)
-  for (let round = 0; round < 6; round++) { ... }  // Try 8 or 10
+  // 碰撞检测轮数（值越大，分离越彻底）
+  for (let round = 0; round < 6; round++) { ... }  // 尝试改为 8 或 10
 }
 ```
 
-### Modify Card Dimensions
+### 修改卡片尺寸
 
-Modify the CSS variables at the top of [index.html](index.html):
+在 [index.html](index.html) 顶部的 CSS 变量中修改：
 
 ```css
 :root {
-  --card-w: 92px;    /* Card width */
-  --card-h: 114px;   /* Card height */
-  --photo-w: 78px;   /* Photo display width */
-  --photo-h: 78px;   /* Photo display height */
+  --card-w: 92px;    /* 卡片宽度 */
+  --card-h: 114px;   /* 卡片高度 */
+  --photo-w: 78px;   /* 照片显示宽度 */
+  --photo-h: 78px;   /* 照片显示高度 */
 }
 ```
 
-## 🐛 FAQ
+## 🐛 常见问题
 
-### Q1: Page shows "Failed to read photos folder"
+### Q1: 网页显示"读取 photos 文件夹失败"
 
-**Cause**: Local server not started or API unavailable
+**原因**：未启动本地服务器或 API 不可用
 
-**Solutions**:
-- Local run: Make sure you've executed `npm start`
-- Netlify deployment: Confirm you've run `npm run build` and configured correctly
+**解决方案**：
+- 本地运行：确保执行了 `npm start`
+- Netlify 部署：确认已运行 `npm run build` 并正确配置
 
-### Q2: Photos are not displaying
+### Q2: 照片没有显示出来
 
-**Possible causes and solutions**:
-1. **Unsupported format**: Check if it's `.jpg/.png/.webp/.gif` format
-2. **HEIC format**: Need to convert to JPG first (use macOS Preview "Export" function)
-3. **Special characters in filename**: Avoid Chinese characters, spaces, etc.
-4. **Not rebuilt**: Netlify users need to re-commit code to trigger rebuild
+**可能原因及解决方法**：
+1. **格式不支持**：检查是否为 `.jpg/.png/.webp/.gif` 格式
+2. **HEIC 格式**：需先转换为 JPG（可用 macOS 预览"导出"功能）
+3. **文件名特殊字符**：避免使用中文、空格等特殊字符
+4. **未重新构建**：Netlify 用户需重新提交代码触发构建
 
-### Q3: Too much photo overlap
+### Q3: 照片重叠太多
 
-**Solutions**:
-1. Click **"Shuffle"** multiple times to try different layouts
-2. Edit parameters in `createHeartParams()` function (see customization section above)
-3. Reduce number of photos (recommended < 100)
+**解决方案**：
+1. 点击 **"随机重排"** 多次尝试不同布局
+2. 编辑 `createHeartParams()` 函数中的参数（见上方自定义配置）
+3. 减少照片数量（建议 < 100 张）
 
-### Q4: Exported image is blank
+### Q4: 导出的图片是空白的
 
-**Cause**: Browser cross-origin security restrictions
+**原因**：浏览器跨域安全限制
 
-**Solutions**:
-- Ensure access via HTTP (not file:// protocol)
-- Use `http://localhost:3000` or a live URL
+**解决方案**：
+- 确保通过 HTTP 访问（非 file:// 协议）
+- 使用 `http://localhost:3000` 或线上 URL
 
-### Q5: How to change port?
+### Q5: 如何更改端口？
 
-Modify the last line of `server.js` or set environment variable:
+修改 `server.js` 最后一行或设置环境变量：
 
 ```bash
 PORT=8080 npm start
 ```
 
-## 🛠️ Tech Stack
+## 🛠️ 技术栈
 
-- **Frontend**: Vanilla HTML/CSS/JavaScript (no framework dependencies)
-- **Backend**: Node.js + Express
-- **Real-time Communication**: WebSocket (ws)
-- **Deployment**: Netlify / Vercel / Any static hosting service
-- **Build**: Node.js / Python dual build scripts
+- **前端**：原生 HTML/CSS/JavaScript（无框架依赖）
+- **后端**：Node.js + Express
+- **实时通信**：WebSocket (ws)
+- **部署**：Netlify / Vercel / 任意静态托管服务
+- **构建**：Node.js / Python 双构建脚本
 
-## 📊 Performance Parameters
+## 📊 性能参数
 
-| Parameter | Recommended Value | Description |
-|-----------|-------------------|-------------|
-| Number of photos | 20-100 | Too many may affect performance |
-| Single photo size | < 2MB | Recommended to compress before upload |
-| Total size | < 50MB | Free tier Netlify limit |
-| Browser | Chrome/Firefox/Safari/Edge | Modern browsers |
+| 参数 | 推荐值 | 说明 |
+|------|--------|------|
+| 照片数量 | 20-100 张 | 过多会影响性能 |
+| 单张大小 | < 2MB | 建议压缩后上传 |
+| 总大小 | < 50MB | 免费版 Netlify 限制 |
+| 浏览器 | Chrome/Firefox/Safari/Edge | 现代浏览器 |
 
-## 🤝 Contributing Guide
+## 🤝 贡献指南
 
-Issues and Pull Requests are welcome!
+欢迎提交 Issue 和 Pull Request！
 
-1. Fork this repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork 本仓库 [https://github.com/gongfinis/520photos](https://github.com/gongfinis/520photos)
+2. 创建特性分支 (`git checkout -b feature/amazing-feature`)
+3. 提交更改 (`git commit -m '添加某个很棒的功能'`)
+4. 推送到分支 (`git push origin feature/amazing-feature`)
+5. 开启 Pull Request
 
-## 📄 License
+## 📄 许可证
 
-MIT License - Free to use, modify, and distribute
+MIT License - 自由使用、修改和分发
 
-## ❤️ Acknowledgments
+## ❤️ 致谢
 
-Thanks to all developers who contributed inspiration and code to this project!
+感谢所有为这个项目贡献灵感和代码的开发者！
 
 ---
 
-**Enjoy creating your own heart collage!** 💕
+**享受创建属于你的爱心相册吧！** 💕
 
-If you find it useful, please give it a ⭐ Star!
+如果觉得有用，欢迎给个 ⭐ Star 支持一下！
+
+🔗 **GitHub**: [https://github.com/gongfinis/520photos](https://github.com/gongfinis/520photos)
