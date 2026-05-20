@@ -173,7 +173,6 @@ vercel
 ├── package-lock.json        # 依赖锁定文件
 ├── README.md                # 中文文档（本文件）
 ├── README.en.md             # 英文文档
-└── GITHUB_UPLOAD_GUIDE.md   # GitHub 上传指南
 ```
 
 ## 🎮 使用指南
