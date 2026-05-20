@@ -173,7 +173,6 @@ Or directly import your GitHub repository `gongfinis/520photos` on [vercel.com](
 ├── package-lock.json        # Dependency lock file
 ├── README.md                # Chinese documentation
 ├── README.en.md             # English documentation (this file)
-└── GITHUB_UPLOAD_GUIDE.md   # GitHub upload guide
 ```
 
 ## 🎮 User Guide
